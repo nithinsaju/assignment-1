@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+  stages {
+    stage ("Prompt for input") {
+      steps {
+        script {
+          env.NAME = input message: 'Please enter the name',
+                             parameters: [string(defaultValue: '',
+                                          description: '',
+                                          name: 'Username')]
+#          env.PASSWORD = input message: 'Please enter the password',
+#                             parameters: [password(defaultValue: '',
+#                                          description: '',
+#                                          name: 'Password')]
+        }
+        echo "Name: ${env.NAME}"
+#        echo "Password: ${env.PASSWORD}"
+      }
+    }
+  }
+}
