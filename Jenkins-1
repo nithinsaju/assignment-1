@@ -4,7 +4,7 @@ pipeline {
   git 'Default'
   }
   stages {
-    stage ("Prompt for input") {
+    stage ("Input variable") {
       steps {
         script {
           env.NAME = input message: 'Please enter the name',
