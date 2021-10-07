@@ -1,16 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage ("Input variable") {
-      steps {
-        script {
-          env.NAME = input message: 'Please enter the name',
-                             parameters: [string(defaultValue: '',
-                                          description: '',
-                                          name: 'Username')]
+    agent any
+    stages {
+        stage('terraform init'){
+            steps{
+            sh "terraform init"
+            }
         }
-        echo "Name: ${env.NAME}"
+        stage('terraform apply'){
+            steps{
+                sh returnStatus: true, script: 'terraform apply -auto-approve'
+            }
       }
     }
-  }
 }
