@@ -13,7 +13,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply var="image_name=${param.Name}" -auto-approve'
+                sh returnStatus: true, script: 'terraform apply var="image_name=${param}" -auto-approve'
             }
       }
     }
