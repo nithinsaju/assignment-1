@@ -13,7 +13,9 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply -var 'instance_name='
+                sh returnStatus: true, script: 'terraform apply -var 'instance_name=''
+                
+                
             }
       }
     }
