@@ -7,12 +7,11 @@ resource "aws_instance" "u15-aws-ec2" {
   ami = "ami-041d6256ed0f2061c" 
   
   tags = {
-  Name = "My_Ec2"
   Name = var.instance_name
   }
+}
 
   variable "instance_name" {
   type = string 
   default = "U15_Ec2"
   }
-}
