@@ -17,7 +17,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply -input=yes'       
+                sh returnStatus: true, script: 'terraform apply --auto-approve'       
             }
       }
     }
