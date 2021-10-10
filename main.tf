@@ -13,6 +13,6 @@ resource "aws_instance" "u15-aws-ec2" {
 
   variable "instance_name" {
   type = string 
-  default = ""
+  default = "U15_Ec2"
   }
 }
