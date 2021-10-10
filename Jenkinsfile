@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-      string defaultValue: 'my_ec2_name', name: 'Vmname'
+      string defaultValue: '', name: 'Vmname'
     }
 
     stages {
