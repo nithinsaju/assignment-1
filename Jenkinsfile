@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-      string defaultValue: '', name: 'Vmname'
+      string defaultValue: '', name: 'Enter your Virtual EC2 Resource Name'
     }
 
     stages {
