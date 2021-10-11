@@ -1,10 +1,15 @@
 pipeline {
     agent any
     parameters {
-      string defaultValue: 'u15_Default', name: 'Enter your Virtual EC2 Resource Name'
+        string(name: 'VMName', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
 
     stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.VMName}"
+            }
+        }
         stage('initializing'){
             steps{
             sh "terraform init"
