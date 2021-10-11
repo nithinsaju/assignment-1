@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Passed Value') {
             steps {
-                echo "Hello ${params.name}"
+                echo "Hello ${params.defaultValue}"
             }
         }
         stage('initializing'){
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply --auto-approve -var instance_name="${params.name}"' 
+                sh returnStatus: true, script: 'terraform apply --auto-approve -var instance_name="${params.defaultValue}"' 
             }
       }
     }
