@@ -5,11 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Passing Parameter') {
-            steps {
-                echo "Hello ${params.VMName}"
-            }
-        }
         stage('initializing'){
             steps{
             sh "terraform init"
