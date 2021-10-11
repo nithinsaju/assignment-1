@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage('Example') {
+        stage('Passing Parameter') {
             steps {
                 echo "Hello ${params.VMName}"
             }
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply --auto-approve'       
+                sh returnStatus: true, script: 'terraform apply --auto-approve -var="{params.VMName}"'       
             }
       }
     }
