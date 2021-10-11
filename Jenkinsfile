@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'Name_VM', defaultValue: 'Mr EC2_VM', description: '')
+        string(name: 'VM', defaultValue: 'Mr EC2_VM', description: 'Name of your Virtual Machine')
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply --auto-approve -var instance_name="${params.Name_VM}"' 
+                sh returnStatus: true, script: 'terraform apply --auto-approve -var instance_name="${params.VM}"' 
             }
       }
     }
