@@ -5,6 +5,11 @@ pipeline {
     }
 
     stages {
+        stage('Passed Value') {
+            steps {
+                echo "Hello ${params.name}"
+            }
+        }
         stage('initializing'){
             steps{
             sh "terraform init"
