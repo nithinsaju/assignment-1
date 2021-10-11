@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'VM', defaultValue: 'Mr EC2_VM', description: 'Name of your Virtual Machine')
+        string(name: 'VM', defaultValue: 'u15_Default', description: 'Name of your Virtual Machine')
     }
 
     stages {
