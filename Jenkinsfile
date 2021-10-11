@@ -22,7 +22,7 @@ pipeline {
         }
         stage('applying'){
             steps{
-                sh returnStatus: true, script: 'terraform apply --auto-approve -var instance_name="${params.defaultValue}"' 
+                sh returnStatus: true, script: 'terraform apply --auto-approve -var 'instance_name=${params.defaultValue}'' 
             }
       }
     }
