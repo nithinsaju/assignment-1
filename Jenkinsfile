@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Passed Value') {
             steps {
-                echo "Hello ${params.name}"
+                echo "Hello ${params.description}"
             }
         }
         stage('initializing'){
